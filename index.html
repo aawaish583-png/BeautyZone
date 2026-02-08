@@ -3,708 +3,1187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdSense RPM Calculator 2024: Free Tool to Estimate Your Earnings</title>
-    <meta name="description" content="Free AdSense RPM calculator tool. Estimate your Google AdSense revenue, understand RPM vs CPM metrics, and get tips to optimize your website for better ad performance.">
-    <link rel="canonical" href="https://aawaish583-png.github.io/adsense-rpm-calculator/">
+    <title>Beauty Zone | India's Premium Beauty & Cosmetics Brand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <style>
-        :root {
-            --primary: #1a73e8;
-            --primary-dark: #0d62d9;
-            --secondary: #34a853;
-            --text: #202124;
-            --text-light: #5f6368;
-            --border: #dadce0;
-            --bg: #f8f9fa;
-            --white: #ffffff;
-            --radius: 6px;
-            --shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--bg);
-            font-size: 16px;
+
+        :root {
+            --primary-black: #000000;
+            --primary-pink: #e91e63;
+            --light-pink: #fce4ec;
+            --light-gray: #f5f5f5;
+            --medium-gray: #9e9e9e;
+            --dark-gray: #616161;
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-black);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-        /* Header */
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary-pink);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-pink);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #d81b60;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-pink);
+            border: 1px solid var(--primary-pink);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-pink);
+            color: var(--white);
+        }
+
+        /* Header Styles */
         header {
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
+            background-color: var(--primary-black);
+            color: var(--white);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: var(--shadow);
         }
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        .header-top {
             padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         .logo {
+            font-size: 28px;
             font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--primary);
-            text-decoration: none;
+            color: var(--white);
         }
+
         .logo span {
-            color: var(--text);
+            color: var(--primary-pink);
         }
-        nav {
-            display: flex;
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 20px;
+            position: relative;
         }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 20px;
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: none;
+            font-size: 14px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
         }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-light);
-            font-size: 0.95rem;
-            padding: 5px 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s;
+
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
         }
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-        }
-        .mobile-menu-btn {
-            display: none;
+
+        .search-bar button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
             background: none;
             border: none;
-            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
-            color: var(--text-light);
         }
-        .disclaimer-bar {
-            background: #fef7e0;
-            border-bottom: 1px solid #fde293;
-            padding: 8px 0;
-            font-size: 0.85rem;
-            text-align: center;
-            color: var(--text-light);
-        }
-        .disclaimer-bar a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        /* Hero */
-        .hero {
-            padding: 40px 0 30px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--text);
-            line-height: 1.3;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        /* Calculator */
-        .calculator-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 30px;
-            margin-bottom: 40px;
-        }
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            color: var(--text);
-        }
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        .input-group {
-            margin-bottom: 20px;
-        }
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text);
-        }
-        .input-group input,
-        .input-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            font-size: 1rem;
-            transition: border 0.2s;
-        }
-        .input-group input:focus,
-        .input-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        .range-display {
+
+        .header-icons {
             display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-top: 5px;
-        }
-        .btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: var(--radius);
-            padding: 14px 25px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background: var(--primary-dark);
-        }
-        .btn-secondary {
-            background: #f1f3f4;
-            color: var(--text);
-        }
-        .btn-secondary:hover {
-            background: #e8eaed;
-        }
-        .results {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
             gap: 20px;
         }
-        .result-box {
-            background: #f8f9fa;
-            border-radius: var(--radius);
-            padding: 20px;
-            text-align: center;
+
+        .header-icons a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            transition: var(--transition);
         }
-        .result-value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 10px 0;
+
+        .header-icons a:hover {
+            color: var(--primary-pink);
         }
-        .result-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
+
+        .header-icons i {
+            font-size: 20px;
+            margin-bottom: 3px;
         }
-        /* Content */
-        .content-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 30px;
-            margin-bottom: 30px;
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary-pink);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        h3 {
-            font-size: 1.3rem;
-            margin: 25px 0 15px;
-            color: var(--text);
+
+        .cart-icon {
+            position: relative;
         }
-        h3:first-child {
-            margin-top: 0;
+
+        /* Categories Slider */
+        .categories {
+            padding: 15px 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
-        p {
-            margin-bottom: 15px;
-            color: var(--text-light);
+
+        .categories::-webkit-scrollbar {
+            display: none;
         }
-        ul, ol {
-            padding-left: 20px;
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        .note-box {
-            background: #f0f7ff;
-            border-left: 4px solid var(--primary);
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 0 var(--radius) var(--radius) 0;
-        }
-        .note-box h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        .affiliate-box {
-            background: #f8f9fa;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 25px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        .affiliate-box h4 {
-            margin-bottom: 15px;
-            color: var(--text);
-        }
-        .affiliate-box ul {
-            text-align: left;
-            max-width: 500px;
-            margin: 20px auto;
-        }
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-        }
-        .faq-question {
-            font-weight: 600;
-            cursor: pointer;
+
+        .categories-container {
             display: flex;
             justify-content: space-between;
+            min-width: 700px;
+        }
+
+        .category-item {
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            padding: 5px 15px;
+            transition: var(--transition);
+            cursor: pointer;
         }
-        .faq-answer {
-            max-height: 0;
+
+        .category-item:hover {
+            color: var(--primary-pink);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--light-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .category-item:hover .category-icon {
+            background-color: var(--primary-pink);
+            color: var(--white);
+        }
+
+        .category-icon i {
+            font-size: 24px;
+        }
+
+        .category-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .offer-badge {
+            display: inline-block;
+            background-color: var(--primary-pink);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Product Sections */
+        .products-section {
+            padding: 50px 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
             overflow: hidden;
-            transition: max-height 0.3s ease;
-            color: var(--text-light);
-            margin-top: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
         }
-        .faq-item.active .faq-answer {
-            max-height: 500px;
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        .faq-toggle {
-            font-size: 1.2rem;
-            transition: transform 0.3s;
+
+        .product-image {
+            height: 250px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
-        .faq-item.active .faq-toggle {
-            transform: rotate(45deg);
+
+        .product-image img {
+            max-height: 100%;
+            object-fit: cover;
         }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--primary-pink);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-right: 8px;
+        }
+
+        .rating-count {
+            color: var(--medium-gray);
+            font-size: 14px;
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary-pink);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #d81b60;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            background-color: var(--light-gray);
+            padding: 40px 0;
+            margin: 50px 0;
+        }
+
+        .badges-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .badge-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 120px;
+        }
+
+        .badge-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .badge-icon i {
+            font-size: 24px;
+            color: var(--primary-pink);
+        }
+
+        .badge-text {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
         /* Footer */
         footer {
-            background: var(--text);
-            color: #e8eaed;
-            padding: 50px 0 20px;
-            margin-top: 50px;
+            background-color: var(--primary-black);
+            color: var(--white);
+            padding-top: 60px;
         }
-        .footer-grid {
+
+        .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 40px;
         }
-        .footer-col h4 {
-            color: white;
+
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: 600;
             margin-bottom: 20px;
-            font-size: 1.1rem;
+            position: relative;
+            padding-bottom: 10px;
         }
-        .footer-links {
-            list-style: none;
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-pink);
         }
-        .footer-links a {
-            color: #bdc1c6;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            font-size: 14px;
         }
-        .footer-links a:hover {
-            color: white;
+
+        .footer-column ul li {
+            margin-bottom: 12px;
         }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary-pink);
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-pink);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-pink);
+            transform: translateY(-3px);
+        }
+
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #3c4043;
-            color: #9aa0a6;
-            font-size: 0.9rem;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
         }
-        .copyright a {
-            color: #bdc1c6;
-            text-decoration: none;
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            .search-bar {
+                order: 3;
+                max-width: 100%;
+                margin: 15px 0 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
+            }
         }
-        /* Responsive */
+
         @media (max-width: 768px) {
-            .calculator-grid {
-                grid-template-columns: 1fr;
+            .hero-content h1 {
+                font-size: 30px;
             }
-            .results {
-                grid-template-columns: repeat(2, 1fr);
+            
+            .hero-content p {
+                font-size: 16px;
             }
-            .mobile-menu-btn {
-                display: block;
+            
+            .section-title {
+                font-size: 24px;
             }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--white);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                border-top: 1px solid var(--border);
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
-            .nav-links.active {
-                display: flex;
+            
+            .categories-container {
+                justify-content: flex-start;
+                padding: 0 10px;
             }
-            .nav-links li {
-                margin: 10px 0;
+            
+            .category-item {
+                padding: 5px 10px;
+                min-width: 80px;
             }
-            .nav-links a {
-                padding: 10px 0;
+            
+            .category-icon {
+                width: 50px;
+                height: 50px;
             }
-            h1 {
-                font-size: 1.7rem;
-            }
-            h2 {
-                font-size: 1.4rem;
-            }
-            h3 {
-                font-size: 1.2rem;
-            }
-            .calculator-card,
-            .content-card {
-                padding: 20px;
+            
+            .category-icon i {
+                font-size: 20px;
             }
         }
-        @media (max-width: 480px) {
-            .results {
-                grid-template-columns: 1fr;
+
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 24px;
             }
-            .btn {
-                width: 100%;
-                text-align: center;
+            
+            .header-icons {
+                gap: 15px;
+            }
+            
+            .hero-banner {
+                padding: 50px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 26px;
+            }
+            
+            .offer-badge {
+                font-size: 16px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .product-image {
+                height: 180px;
+            }
+            
+            .badges-container {
+                justify-content: center;
+            }
+            
+            .badge-item {
+                width: 45%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="disclaimer-bar">
-        <div class="container">
-            <strong>Disclosure:</strong> We may earn affiliate commissions from hosting recommendations. <a href="#affiliate">Learn more</a>. We are not affiliated with Google AdSense.
-        </div>
-    </div>
+    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-inner">
-                <a href="/" class="logo">AdSense<span>Calculator</span></a>
-                <button class="mobile-menu-btn" id="menuBtn">☰</button>
-                <nav>
-                    <ul class="nav-links" id="navLinks">
-                        <li><a href="/" class="active">Home</a></li>
-                        <li><a href="#calculator">Calculator</a></li>
-                        <li><a href="#guide">Guide</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="/best-hosting-for-adsense.html">Hosting</a></li>
-                        <li><a href="/about.html">About</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+        <div class="header-top">
+            <div class="container header-container">
+                <a href="#" class="logo">Beauty<span>Zone</span></a>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products, brands and more...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="header-icons">
+                    <a href="#">
+                        <i class="fas fa-user"></i>
+                        <span>Account</span>
+                    </a>
+                    <a href="#" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Cart</span>
+                        <span class="cart-count">3</span>
+                    </a>
+                    <a href="#" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                        <span>Menu</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Categories Slider -->
+        <div class="categories">
+            <div class="container categories-container">
+                <div class="category-item active">
+                    <div class="category-icon">
+                        <i class="fas fa-kiss-wink-heart"></i>
+                    </div>
+                    <span class="category-name">Lips</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <span class="category-name">Face</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <span class="category-name">Eye</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <span class="category-name">New Launch</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <span class="category-name">Skin Care</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <span class="category-name">Brushes & Tools</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-perfume"></i>
+                    </div>
+                    <span class="category-name">Fragrance</span>
+                </div>
             </div>
         </div>
     </header>
-    <main class="container">
-        <section class="hero">
-            <h1>AdSense RPM Calculator: Estimate Your Ad Revenue</h1>
-            <p>Use our free calculator to estimate your Google AdSense earnings. Understand RPM metrics and learn how to optimize your website for better ad performance.</p>
-        </section>
-        <section id="calculator" class="calculator-card">
-            <h2>AdSense Earnings Calculator</h2>
-            <div class="calculator-grid">
-                <div>
-                    <div class="input-group">
-                        <label for="earnings">Total AdSense Earnings ($)</label>
-                        <input type="number" id="earnings" min="0" step="0.01" value="500">
-                    </div>
-                    <div class="input-group">
-                        <label for="pageviews">Total Page Views</label>
-                        <input type="number" id="pageviews" min="0" value="100000">
-                    </div>
-                    <div class="input-group">
-                        <label for="days">Time Period (Days)</label>
-                        <input type="number" id="days" min="1" value="30">
-                    </div>
-                    <div class="input-group">
-                        <label for="cpc">Estimated CPC (Optional)</label>
-                        <input type="range" id="cpc" min="0.01" max="5" step="0.01" value="0.5">
-                        <div class="range-display">
-                            <span>$0.01</span>
-                            <span id="cpcValue">$0.50</span>
-                            <span>$5.00</span>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="container hero-content">
+            <div class="offer-badge">Limited Time Offer</div>
+            <h1>Buy Any 4 Products @ Just ₹999</h1>
+            <p>Discover premium beauty products at unbeatable prices. Mix and match your favorites!</p>
+            <a href="#" class="btn btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Bestseller Products -->
+    <section class="products-section container">
+        <h2 class="section-title">Best Sellers</h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Bestseller</span>
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Matte Lipstick">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Matte Revolution Lipstick - Red Carpet</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
                         </div>
+                        <span class="rating-count">(1,234)</span>
                     </div>
-                    <button id="calculateBtn" class="btn">Calculate Earnings</button>
+                    <div class="product-price">₹349</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
                 </div>
-                <div>
-                    <div class="results">
-                        <div class="result-box">
-                            <div class="result-label">RPM</div>
-                            <div class="result-value" id="rpmResult">$5.00</div>
-                            <div class="result-label">Revenue per 1k views</div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Trending</span>
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Foundation">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">HD Photogenic Foundation - Beige</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
                         </div>
-                        <div class="result-box">
-                            <div class="result-label">CPM</div>
-                            <div class="result-value" id="cpmResult">$5.00</div>
-                            <div class="result-label">Estimated CPM</div>
-                        </div>
-                        <div class="result-box">
-                            <div class="result-label">Daily Revenue</div>
-                            <div class="result-value" id="dailyResult">$16.67</div>
-                            <div class="result-label">Per day</div>
-                        </div>
-                        <div class="result-box">
-                            <div class="result-label">Monthly Revenue</div>
-                            <div class="result-value" id="monthlyResult">$500.00</div>
-                            <div class="result-label">30-day estimate</div>
-                        </div>
+                        <span class="rating-count">(2,541)</span>
                     </div>
-                    <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-light);">These are estimates based on your inputs. Actual AdSense earnings vary based on traffic quality, ad optimization, and other factors.</p>
+                    <div class="product-price">₹599</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
                 </div>
-            </div>
-        </section>
-        <section id="guide" class="content-card">
-            <h2>Understanding AdSense RPM: A Complete Guide</h2>
-            <p>Revenue Per Mille (RPM) is a key metric for Google AdSense publishers. It represents estimated earnings per 1,000 page views. Unlike CPM (cost per mille), which measures advertiser costs, RPM reflects actual publisher revenue.</p>
-            
-            <h3>How RPM is Calculated</h3>
-            <p>The RPM formula is simple: <strong>(Estimated earnings ÷ Number of page views) × 1,000</strong>. For example, if you earn $50 from 25,000 page views, your RPM is ($50 ÷ 25,000) × 1,000 = $2.00.</p>
-            
-            <h3>Factors That Affect Your RPM</h3>
-            <ul>
-                <li><strong>Traffic geography:</strong> Traffic from certain countries typically generates higher RPM.</li>
-                <li><strong>Content niche:</strong> Some topics attract higher-paying advertisers.</li>
-                <li><strong>User engagement:</strong> Longer session durations often correlate with better ad performance.</li>
-                <li><strong>Ad placement and types:</strong> Well-optimized ad units can improve click-through rates.</li>
-                <li><strong>Website speed:</strong> Faster loading pages provide better user experience and ad viewability.</li>
-                <li><strong>Mobile optimization:</strong> With most traffic coming from mobile devices, mobile-friendly sites perform better.</li>
-            </ul>
-            
-            <div class="note-box">
-                <h4>RPM vs CPM: What's the Difference?</h4>
-                <p><strong>CPM</strong> (Cost Per Mille) is what advertisers pay Google for 1,000 ad impressions. <strong>RPM</strong> (Revenue Per Mille) is what publishers earn from 1,000 page views. Your RPM is typically lower than CPM because Google takes a portion, and not all page views result in ad impressions.</p>
             </div>
             
-            <h3>Tips to Improve Your AdSense RPM</h3>
-            <ol>
-                <li><strong>Optimize ad placement:</strong> Place ads where users naturally look without disrupting content.</li>
-                <li><strong>Improve website speed:</strong> Faster sites keep users engaged longer and improve ad viewability.</li>
-                <li><strong>Create quality content:</strong> Comprehensive, well-researched content attracts better traffic.</li>
-                <li><strong>Use responsive ad units:</strong> Ensure ads display properly on all devices.</li>
-                <li><strong>Experiment with ad formats:</strong> Test different ad sizes and types to find what works for your audience.</li>
-                <li><strong>Focus on organic traffic:</strong> SEO-optimized content tends to attract higher-intent visitors.</li>
-            </ol>
-            
-            <h3>How Website Hosting Affects RPM Indirectly</h3>
-            <p>Your hosting provider doesn't directly control your RPM, but it affects factors that influence ad performance:</p>
-            <ul>
-                <li><strong>Page load speed:</strong> Slow hosting increases bounce rates, reducing ad impressions.</li>
-                <li><strong>Uptime reliability:</strong> Frequent downtime means lost traffic and revenue opportunities.</li>
-                <li><strong>Mobile performance:</strong> Hosting that supports fast mobile delivery improves user experience.</li>
-                <li><strong>Technical foundation:</strong> Proper hosting configuration supports better SEO and Core Web Vitals.</li>
-            </ul>
-            <p>While premium hosting won't guarantee higher RPM, it creates the technical foundation for better website performance, which can positively impact user engagement and ad viewability.</p>
-            
-            <div id="affiliate" class="affiliate-box">
-                <h4>Optional Hosting Recommendation</h4>
-                <p>Based on general industry feedback, many publishers find these hosting features beneficial:</p>
-                <ul>
-                    <li>Reliable uptime (99.9% or better)</li>
-                    <li>Good loading speeds</li>
-                    <li>Free SSL certificate (required for AdSense)</li>
-                    <li>WordPress optimization (if using WordPress)</li>
-                    <li>Responsive customer support</li>
-                </ul>
-                <p style="margin: 20px 0;"><strong>Note:</strong> We may earn a commission if you choose to use recommended hosting services. This supports our free tools and content.</p>
-                <a href="/best-hosting-for-adsense.html" class="btn btn-secondary">Compare Hosting Options</a>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mascara">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Volume Boost Mascara - Black</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-count">(3,127)</span>
+                    </div>
+                    <div class="product-price">₹449</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
+                </div>
             </div>
             
-            <h3>Common RPM Ranges by Website Type</h3>
-            <p>RPM varies widely. New websites might see $2-5 RPM, while established sites in competitive niches can achieve $15-30+ RPM. Factors like traffic quality, content type, and optimization level all contribute to these variations.</p>
-        </section>
-        <section id="faq" class="content-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <div class="faq-question">
-                    What is a good AdSense RPM?
-                    <span class="faq-toggle">+</span>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Makeup Brush">
                 </div>
-                <div class="faq-answer">
-                    <p>There's no universal "good" RPM as it varies by niche, traffic quality, and website maturity. Generally, $5-15 RPM is common for established content websites. Focus on improving your own RPM over time rather than comparing to others.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    How often should I check my RPM?
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Check monthly for meaningful trends. Daily fluctuations are normal due to traffic variations and advertiser demand changes. Monthly comparisons provide clearer insight into your optimization efforts.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Does website hosting affect AdSense approval?
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Google doesn't specify hosting requirements, but technical factors matter. Your site needs HTTPS (SSL), reasonable loading speed, and proper functionality. Quality hosting helps meet these technical requirements.</p>
+                <div class="product-info">
+                    <h3 class="product-name">Professional Makeup Brush Set - 12 pcs</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(872)</span>
+                    </div>
+                    <div class="product-price">₹899</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
                 </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    How can I increase my RPM without more traffic?
-                    <span class="faq-toggle">+</span>
+        </div>
+    </section>
+
+    <!-- Face Products -->
+    <section class="products-section container">
+        <h2 class="section-title">Face Products</h2>
+        <div class="products-grid">
+            <!-- Face Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1556228578-9c360e1d8d34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Compact Powder">
                 </div>
-                <div class="faq-answer">
-                    <p>Optimize existing traffic: improve ad placements, increase content engagement, enhance website speed, and test different ad formats. Sometimes fewer but better-placed ads outperform many poorly placed ones.</p>
+                <div class="product-info">
+                    <h3 class="product-name">Stay Matte Compact Powder - Natural</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="rating-count">(1,542)</span>
+                    </div>
+                    <div class="product-price">₹299</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
                 </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Why does my RPM fluctuate daily?
-                    <span class="faq-toggle">+</span>
+            
+            <!-- Face Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1596703923338-48f1c07e4f2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Concealer">
                 </div>
-                <div class="faq-answer">
-                    <p>Daily RPM fluctuations are normal due to: changing advertiser demand, traffic source variations, day-of-week patterns, and seasonal trends. Look at weekly and monthly averages for better insight.</p>
+                <div class="product-info">
+                    <h3 class="product-name">Full Coverage Concealer - Light</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(2,013)</span>
+                    </div>
+                    <div class="product-price">₹399</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
                 </div>
             </div>
-        </section>
-    </main>
+            
+            <!-- Face Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Sale</span>
+                    <img src="https://images.unsplash.com/photo-1526045478516-99145907023c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blush">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Rosy Glow Blush - Peach</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-count">(1,856)</span>
+                    </div>
+                    <div class="product-price">₹249 <span style="text-decoration: line-through; color: #9e9e9e; font-size: 16px;">₹349</span></div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
+                </div>
+            </div>
+            
+            <!-- Face Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1571330735066-03f0d43a151a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Highlighter">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Radiant Glow Highlighter - Champagne</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="rating-count">(1,327)</span>
+                    </div>
+                    <div class="product-price">₹449</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lips Products -->
+    <section class="products-section container">
+        <h2 class="section-title">Lips Products</h2>
+        <div class="products-grid">
+            <!-- Lips Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Liquid Lipstick">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Long Lasting Liquid Lipstick - Berry</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(3,412)</span>
+                    </div>
+                    <div class="product-price">₹399</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
+                </div>
+            </div>
+            
+            <!-- Lips Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Lip Gloss">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Glossy Lip Shine - Clear</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="rating-count">(1,876)</span>
+                    </div>
+                    <div class="product-price">₹249</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
+                </div>
+            </div>
+            
+            <!-- Lips Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">Bestseller</span>
+                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Lip Liner">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Precision Lip Liner - Nude</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-count">(2,543)</span>
+                    </div>
+                    <div class="product-price">₹199</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
+                </div>
+            </div>
+            
+            <!-- Lips Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Lip Balm">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Moisturizing Lip Balm - Strawberry</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(3,129)</span>
+                    </div>
+                    <div class="product-price">₹149</div>
+                    <button class="add-to-cart-btn">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="container badges-container">
+            <div class="badge-item">
+                <div class="badge-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <span class="badge-text">PETA Cruelty Free</span>
+            </div>
+            <div class="badge-item">
+                <div class="badge-icon">
+                    <i class="fas fa-wine-glass-alt"></i>
+                </div>
+                <span class="badge-text">Alcohol Free</span>
+            </div>
+            <div class="badge-item">
+                <div class="badge-icon">
+                    <i class="fas fa-ban"></i>
+                </div>
+                <span class="badge-text">Phthalates Free</span>
+            </div>
+            <div class="badge-item">
+                <div class="badge-icon">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+                <span class="badge-text">Dermatologically Tested</span>
+            </div>
+            <div class="badge-item">
+                <div class="badge-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <span class="badge-text">Paraben Free</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>AdSense Tools</h4>
-                    <ul class="footer-links">
-                        <li><a href="/">RPM Calculator</a></li>
-                        <li><a href="/increase-adsense-rpm.html">Increase RPM Guide</a></li>
-                        <li><a href="/adsense-cpm-calculator.html">CPM Calculator</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Hosting Guides</h4>
-                    <ul class="footer-links">
-                        <li><a href="/best-hosting-for-adsense.html">Hosting for AdSense</a></li>
-                        <li><a href="/wordpress-hosting.html">WordPress Hosting</a></li>
-                        <li><a href="/website-speed-test.html">Speed Test Tool</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="/terms.html">Terms of Service</a></li>
-                        <li><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About</h4>
-                    <p style="color: #bdc1c6; font-size: 0.9rem;">We provide free tools and guides to help website publishers understand and optimize their AdSense revenue. We are not affiliated with Google AdSense.</p>
+        <div class="container footer-container">
+            <div class="footer-column">
+                <h3>About Beauty Zone</h3>
+                <p>Beauty Zone is India's leading beauty and cosmetics brand, offering high-quality, affordable products that celebrate individuality and self-expression. Our mission is to make premium beauty accessible to everyone.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-            <div class="copyright">
-                <p>© 2024 AdSense Calculator. All content is original and for informational purposes only. Google AdSense is a trademark of Google LLC.</p>
-                <p><a href="/disclaimer.html">Disclaimer: We are not affiliated with Google</a></p>
+            
+            <div class="footer-column">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="#">Track Your Order</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Return & Exchange</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Beauty Zone</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Beauty Zone HQ, Mumbai, Maharashtra 400001</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+91 1800-123-4567</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span>support@beautyzone.in</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 Beauty Zone. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
     <script>
         // Mobile menu toggle
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            document.getElementById('navLinks').classList.toggle('active');
+        document.getElementById('menu-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Mobile menu would open here. This is a frontend demo.');
         });
         
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('navLinks');
-            const btn = document.getElementById('menuBtn');
-            if (!menu.contains(event.target) && !btn.contains(event.target)) {
-                menu.classList.remove('active');
+        // Add to cart functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        const cartCount = document.querySelector('.cart-count');
+        let count = 3;
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                count++;
+                cartCount.textContent = count;
+                
+                // Visual feedback
+                this.textContent = 'ADDED TO CART';
+                this.style.backgroundColor = '#4CAF50';
+                
+                setTimeout(() => {
+                    this.textContent = 'ADD TO CART';
+                    this.style.backgroundColor = '';
+                }, 1500);
+                
+                // In a real implementation, this would add the product to cart
+                console.log('Product added to cart');
+            });
+        });
+        
+        // Category slider interaction
+        const categoryItems = document.querySelectorAll('.category-item');
+        categoryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                categoryItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                
+                // In a real implementation, this would filter products
+                console.log('Category clicked: ' + this.querySelector('.category-name').textContent);
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        const searchButton = document.querySelector('.search-bar button');
+        
+        searchButton.addEventListener('click', function() {
+            if (searchInput.value.trim()) {
+                alert('Searching for: ' + searchInput.value);
+                // In a real implementation, this would trigger a search
             }
         });
         
-        // CPC slider update
-        const cpcSlider = document.getElementById('cpc');
-        const cpcValue = document.getElementById('cpcValue');
-        cpcSlider.addEventListener('input', function() {
-            cpcValue.textContent = '$' + parseFloat(this.value).toFixed(2);
-            calculate();
-        });
-        
-        // FAQ toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
-                const item = this.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-        
-        // Calculate function
-        function calculate() {
-            const earnings = parseFloat(document.getElementById('earnings').value) || 0;
-            const pageviews = parseInt(document.getElementById('pageviews').value) || 1;
-            const days = parseInt(document.getElementById('days').value) || 1;
-            const cpc = parseFloat(cpcSlider.value) || 0.5;
-            
-            // Calculate RPM
-            const rpm = (earnings / pageviews) * 1000;
-            
-            // Estimate CPM (assuming ~1% CTR for calculation purposes)
-            const cpm = cpc * 0.01 * 1000;
-            
-            // Calculate daily and monthly revenue
-            const daily = earnings / days;
-            const monthly = (earnings / days) * 30;
-            
-            // Update results
-            document.getElementById('rpmResult').textContent = '$' + rpm.toFixed(2);
-            document.getElementById('cpmResult').textContent = '$' + cpm.toFixed(2);
-            document.getElementById('dailyResult').textContent = '$' + daily.toFixed(2);
-            document.getElementById('monthlyResult').textContent = '$' + monthly.toFixed(2);
-        }
-        
-        // Attach calculation to inputs and button
-        document.getElementById('calculateBtn').addEventListener('click', calculate);
-        ['earnings', 'pageviews', 'days'].forEach(id => {
-            document.getElementById(id).addEventListener('input', calculate);
-        });
-        
-        // Initial calculation
-        calculate();
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if(href === '#') return;
-                
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if(target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    // Close mobile menu if open
-                    document.getElementById('navLinks').classList.remove('active');
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                if (searchInput.value.trim()) {
+                    alert('Searching for: ' + searchInput.value);
+                    // In a real implementation, this would trigger a search
                 }
-            });
+            }
         });
     </script>
 </body>
